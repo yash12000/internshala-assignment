@@ -1,12 +1,79 @@
-# React + Vite
+# Internshala - Internship Search Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project replicates the Internshala internship search page using React. It allows users to search and filter internships based on profile, location, and duration.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Internship List**: Displays a list of internships fetched from the API (https://internshala.com/hiring/search).
+- **Filters**:
+  - Filter internships by profile
+  - Filter internships by location
+  - Filter internships by duration
+- **Frontend Filtering**: All filtering is done on the frontend without additional API requests.
+- **Responsive Design**: Replicates the Internshala UI with potential innovations.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/
+│   ├── Breadcrumb.jsx
+│   ├── Breadcrumb.css
+│   ├── Filters.jsx
+│   ├── Filters.css
+│   ├── Headers.jsx
+│   ├── Headers.css
+│   ├── InternshipCard.jsx
+│   ├── InternshipCard.css
+│   ├── InternshipList.jsx
+│   └── InternshipList.css
+├── App.jsx
+├── App.css
+└── main.jsx
+```
+
+## Technologies Used
+
+- React
+- CSS for styling
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yash12000/internshala-assignment.git
+cd internshala-assignment
+
+# Install dependencies
+npm install
+# or
+yarn install
+```
+
+### Running the Development Server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app in your browser.
+
+## Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the app for production
+- `npm run preview` - Preview the production build locally
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
