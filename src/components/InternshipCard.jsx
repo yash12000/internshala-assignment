@@ -1,19 +1,9 @@
-import React from "react";
-
 const InternshipCard = ({ internship }) => {
   return (
-    <div className="bg-white p-4 shadow-md rounded border hover:shadow-lg transition">
-      <h3 className="text-lg font-bold">{internship.profile}</h3>
-      <p className="text-sm text-gray-600">{internship.company_name}</p>
-      <p className="text-sm mt-1">
-        <strong>Location:</strong> {internship.location}
-      </p>
-      <p className="text-sm">
-        <strong>Duration:</strong> {internship.duration} months
-      </p>
-      <p className="text-sm">
-        <strong>Stipend:</strong> ₹{internship.stipend}
-      </p>
+    <div className="border p-4 rounded shadow-sm bg-white">
+      <h2 className="text-lg font-semibold">{internship.profile_name}</h2>
+      <p className="text-sm text-gray-600">Location: {internship.location_names}</p>
+      <p className="text-sm text-gray-600">Duration: {internship.duration}</p>
     </div>
   );
 };
