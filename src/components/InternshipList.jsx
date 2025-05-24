@@ -1,13 +1,40 @@
-import InternshipCard from "./InternshipCard";
+import { InternshipCard } from "./InternshipCard";
+import "./InternshipList.css";
 
-const InternshipList = ({ internships }) => {
+export function InternshipList({ internships, loading }) {
+  if (loading) {
+    return (
+      <div className="internship-list">
+        <div className="loading">
+          <div className="loading-spinner"></div>
+          <p>Loading internships...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (internships.length === 0) {
+    return (
+      <div className="internship-list">
+        <div className="no-results">
+          <h3>No internships found</h3>
+          <p>Try adjusting your filters to see more results.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {internships.map((internship) => (
-        <InternshipCard key={internship.internship_id} internship={internship} />
-      ))}
+    <div className="internship-list">
+      <div className="results-count">
+        {internships.length} internship{internships.length !== 1 ? "s" : ""}{" "}
+        found
+      </div>
+      <div className="internships-grid">
+        {internships.map((internship) => (
+          <InternshipCard key={internship.id} internship={internship} />
+        ))}
+      </div>
     </div>
   );
-};
-
-export default InternshipList;
+}
