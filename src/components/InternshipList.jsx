@@ -30,7 +30,7 @@ export function InternshipList({ internships, loading }) {
         {internships.length} internship{internships.length !== 1 ? "s" : ""}{" "}
         found
       </div>
-      <div className="internships-grid">
+      <div className="internships-container">
         {internships.map((internship) => (
           <InternshipCard key={internship.id} internship={internship} />
         ))}

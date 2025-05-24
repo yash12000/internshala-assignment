@@ -5,13 +5,11 @@ import { Header } from "./components/Header";
 import { Filters } from "./components/Filters";
 import { InternshipList } from "./components/InternshipList";
 import { Breadcrumb } from "./components/Breadcrumb";
-import { InternshipCard } from "./components/InternshipCard";
 import "./App.css";
 
 function App() {
   const [internships, setInternships] = useState([]);
   const [filteredInternships, setFilteredInternships] = useState([]);
-  const [InternshipCard, setInternshipCard] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({
     profile: "",
@@ -127,6 +125,12 @@ function App() {
         }, 1000);
       } catch (error) {
         console.error("Error fetching internships:", error);
+        console.log("Reason API fails:");
+        console.log("1. CORS policy blocks cross-origin requests");
+        console.log("2. API requires authentication/API keys");
+        console.log("3. Rate limiting and security measures");
+        console.log("4. Browser security restrictions");
+
         setInternships(mockInternships);
         setFilteredInternships(mockInternships);
         setLoading(false);

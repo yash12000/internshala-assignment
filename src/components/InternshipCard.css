@@ -1,0 +1,216 @@
+.internship-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+  background: white;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.internship-item:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.internship-item:last-child {
+  border-bottom: none;
+}
+
+.internship-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+}
+
+.company-logo {
+  margin-bottom: 10px;
+}
+
+.logo-circle {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #00a5ec, #0056b3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.internship-badges {
+  display: flex;
+  gap: 5px;
+}
+
+.badge-wfh {
+  background: #e8f5e8;
+  color: #2d7d32;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.internship-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.internship-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.company-name {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.internship-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.meta-item svg {
+  color: #999;
+  flex-shrink: 0;
+}
+
+.internship-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  gap: 20px;
+}
+
+.posted-time,
+.applicants-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.posted-time svg,
+.applicants-count svg {
+  color: #999;
+}
+
+.internship-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  align-self: flex-end;
+}
+
+.btn-apply {
+  background: #00a5ec;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-apply:hover {
+  background: #0056b3;
+}
+
+.btn-save {
+  background: transparent;
+  color: #00a5ec;
+  border: 1px solid #00a5ec;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-save:hover {
+  background: #00a5ec;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .internship-item {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .internship-header {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .company-logo {
+    margin-bottom: 0;
+  }
+
+  .logo-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .internship-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .internship-actions {
+    margin-left: 0;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .btn-apply,
+  .btn-save {
+    flex: 1;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .internship-actions {
+    flex-direction: column;
+  }
+}
