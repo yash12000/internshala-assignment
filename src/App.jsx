@@ -118,6 +118,45 @@ function App() {
     const fetchInternships = async () => {
       try {
         setLoading(true);
+        setError(null);
+        
+        const response = await fetch('https://internshala.com/hiring/search', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Origin': window.location.origin,
+          },
+          credentials: 'include',
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const processedData = data.internships?.map(internship => ({
+          ...internship,
+          stipendAmount: parseInt(internship.stipend?.replace(/[^0-9]/g, '') || '0', 10)
+        })) || [];
+        
+        setInternships(processedData);
+        setFilteredInternships(processedData);
+      } catch (error) {
+        console.error("Error fetching internships:", error);
+        setError("Failed to load internships. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchInternships();
+  }, []);
+
+  useEffect(() => {
+    const fetchInternships = async () => {
+      try {
+        setLoading(true);
         setTimeout(() => {
           setInternships(mockInternships);
           setFilteredInternships(mockInternships);
